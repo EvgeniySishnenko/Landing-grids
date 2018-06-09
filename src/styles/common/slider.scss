@@ -1,0 +1,212 @@
+.slider__wrp {
+    // min-height: rem(750px);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  
+    @include tablets {
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: rem(1015px);
+    }
+    @include phones {
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: rem(1015px);
+    }
+}
+.slaider__info {
+    background-color: #f2f0e8;
+    width: 50%;
+    height: 100%;
+    @include desktop  {
+    width: 40%;
+    }
+    @include tablets {
+    width: 100%;
+    height: 30%;
+    }
+    @include phones {
+    width: 100%;
+    height: 30%;
+    }
+}
+.slaider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+.content-wrp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: rem(200px);
+    @include tablets {
+    margin-top: rem(40px);
+    }
+    @include phones {
+    margin-top: rem(40px);
+    }
+}
+.title__slider-style {
+    font-size: 35px;
+    color: rgb(71, 75, 87);
+    line-height: 1.171;
+    text-align: center;
+}
+.slider__title {
+    width: rem(400px);
+    height: auto;
+     @include tablets {
+    width: rem(300px);
+    }
+    @include phones {
+    width: rem(200px);
+    }
+}
+.span__border-style {
+    display: block;
+    margin: rem(15px) auto; 
+    border-bottom: 3px solid  rgba(155, 155, 155, 0.7);
+}
+.desc__text {
+    font-size: 15.791px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    color: rgb(8, 60, 150);
+    line-height: 1.2;
+    text-align: center;
+}
+.slider__link {
+    margin-top: rem(40px);
+}
+.slider__link-btn {
+    display: block;
+    background: #004cd1;
+    width: rem(185px);
+    height: rem(40px);
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 2.257;
+    text-align: center;
+    position: relative;
+    padding-top: rem(1px);
+}
+.slider__link--icon {
+    fill: rgb(255, 255, 255);
+    position: absolute;
+    top: 25%;
+    right: 88%;
+}
+.slider__dispaly {
+    background-color: #979795;
+    width: 50%;
+    height: 70%;
+    position: relative;
+    overflow: hidden;
+    @include desktop {
+     width: 60%;
+     }
+    @include tablets {
+    width: 100%;
+    height: 50%;
+    order: -10;
+    }
+    @include phones {
+    width: 100%;
+    height: 50%;
+    order: -10;
+    }
+}
+.slider__img-wrp {
+    width: 100%;
+    height: 100%;
+    @include tablets {
+    width: 100%;
+    height: 100%;
+    }
+    @include phones {
+    width: 100%;
+    height: 100%;
+    }
+}
+.slider-dispaly--img {
+    width: 100%;
+    height: 100%;
+}
+.slider__btns {
+    width: 50%;
+    height: 30%;
+    @include desktop {
+     width: 60%;
+     }
+    @include tablets {
+    width: 100%;
+    height: 20%;
+    }
+    @include phones {
+    width: 100%;
+    height: 20%;
+    }
+}
+.buttons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.controls{
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.controls-list,
+.controls-item {
+    width: 100%;
+    height: 100%;
+}
+.controls-item {
+    position: absolute;
+    left: 0;
+    top: -100%;
+}
+.controls--img {
+    width: 100%;
+    height: 100%;
+}
+.controls-first,
+.controls-second,
+.showing-first,
+.showing-second {
+    .slider-active-item {
+     top: 0%;
+}
+}
+
+.controls--icon {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    fill: #fff;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    transition: all .2s;
+    &:hover {
+      top: 48%;  
+    }
+}
