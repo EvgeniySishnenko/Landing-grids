@@ -1,0 +1,95 @@
+.section-portfolio {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: white;
+}
+.block-pay {
+    width: 100%;
+    height: 160px;
+    background-image: linear-gradient( 0deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+    @include tablets {
+    min-height: 200px;
+    height: auto;
+    }
+}
+.style-flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include tablets {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+.style-width {
+    @include phones390 {
+        min-width: 270px;
+     }
+}
+.pay-text {
+    width: 80%;
+    height: auto;
+    @include tablets {
+      width: 100%;
+      text-align: center; 
+      margin-top: 30px; 
+    }
+}
+.pay-text--title {
+    display: inline-block;
+    font-size: 28px;
+    font-family: "Raleway";
+    color: rgb(199, 178, 153);
+    font-weight: 500;
+    line-height: 0.2;
+     @include tablets {
+          font-size: 20px;
+     }
+      @include phones {
+        font-size: 18px;
+     }
+      @include phones390 {
+        font-size: 14px;
+        display: inline;
+     }
+}
+.pay-text--title-span {
+    color: $brown;
+}
+.pay-shrt-text {
+    font-size: 18px;
+    font-family: "Montserrat";
+    color: rgb(97, 88, 85);
+    font-weight: 500;
+     @include tablets {
+        font-size: 16px;
+     }
+     @include phones {
+        font-size: 15px;
+     }
+      @include phones390 {
+        font-size: 13px;
+     }
+}
+.pay-button {
+    width: 20%;
+    height: auto;
+     @include laptop {
+        margin-right: 30px;
+     }
+     @include laptop875 {
+        margin-right: 40px;
+     }
+    @include tablets {
+        width: 100%;
+        margin-right: 0px;
+    }
+}
+.style-button {
+    margin-top: 0px;
+    @include tablets {
+    margin: 20px auto;
+    }
+}

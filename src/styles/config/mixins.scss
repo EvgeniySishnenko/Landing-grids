@@ -18,6 +18,16 @@
 		@content;
 	}
 }
+@mixin big_desktop_max {
+	@media screen and (max-width: $big_desktop_max) {
+		@content;
+	}
+}
+@mixin big_desktop1600 {
+	@media screen and (max-width: $big_desktop1600) {
+		@content;
+	}
+}
 @mixin desktop {
 	@media screen and (max-width: $desktop) {
 		@content;
@@ -28,8 +38,29 @@
 		@content;
 	}
 }
+@mixin laptop875 {
+	@media screen and (max-width: $laptop875){
+		@content;
+	}
+}
+
 @mixin tablets {
 	@media screen and (max-width: $tablets){
+		@content;
+	}
+}
+@mixin tablets700 {
+	@media screen and (max-width: $tablets700){
+		@content;
+	}
+}
+@mixin tablets574 {
+	@media screen and (max-width: $tablets574){
+		@content;
+	}
+}
+@mixin phones518 {
+	@media screen and (max-width: $phones518){
 		@content;
 	}
 }
@@ -38,22 +69,18 @@
 		@content;
 	}
 }
+@mixin phones390 {
+	@media screen and (max-width: $phones390) {
+		@content;
+	}
+}
 @mixin iphone {
 	@media screen and (max-width: $iphone){
 		@content;
 	}
 }
-@mixin retina {
-	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	only screen and (-webkit-min-device-pixel-ratio: 2),
-	only screen and (-moz-min-device-pixel-ratio: 2),
-	only screen and (-o-min-device-pixel-ratio: 2/1),
-	only screen and (-o-min-device-pixel-ratio: 3/2),
-	only screen and (min--moz-device-pixel-ratio: 1.5),
-	only screen and (min-device-pixel-ratio: 1.5),
-	only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 2dppx),
-    only screen and (min-resolution: 192dpi) {
+@mixin desktop1024 {
+	@media screen and (max-width: $desktop1024) {
 		@content;
 	}
 }

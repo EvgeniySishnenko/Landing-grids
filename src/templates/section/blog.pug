@@ -1,0 +1,38 @@
+section.section-blog#section5.section
+    .container.style-height
+        .section-block--title.block--style-margin-top
+            h2.section-title Recent Posts.
+            .section-text Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
+                        | Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+        .blog-slider
+            .blog-slider--wrp
+                ul.blog-slider--list.slider
+                    
+                        -
+                            var blogs = [
+                                ['assets/images/pricing1.jpg'],
+                                ['assets/images/pricing2.jpg'],
+                                ['assets/images/pricing3.jpg'],
+                                ['assets/images/pricing1.jpg'],
+                                ['assets/images/pricing2.jpg'],
+                                ['assets/images/pricing3.jpg']
+                            ]
+                        each blog in blogs
+                            li.blog-slider--items
+                                .blog-slider--box
+                                    .blog-slider--images-pic
+                                        .blog-calendar
+                                            .blog-calendar--num 30
+                                            .blog-calendar--month Sep.
+                                        .blog--content-hover
+                                        img.blog-slider--images-pic(src=`${blog[0]}`)
+                                    .blog-slider--block-text
+                                        h3.blog-slider--block-text--title Lorem ipsum dolor sit amet
+                                        .blog-slider--block-text--shrt-text Claritas est etiam processus dynamicus, 
+                                                                                |qui sequitur mutationem consuetudium.
+                                        a.blog-slider--block-text--link(href="#") Read More
+       
+                               
+
+        
+    

@@ -1,0 +1,247 @@
+.section-contact {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.block-logo {
+    width: 100%;
+    height: 490px;
+    position: relative;
+    background: url('../images/logos-bckg.jpg');
+    background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+      @include tablets574 {
+        height: auto;
+       
+    }
+}
+.logo-fon {
+    background-color: rgba(13, 13, 13, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+ }
+.logo-bckg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+ }
+.logo-bckg--img {
+    width: 100%;
+    height: 100%;
+ }
+.logo-brend--wrp,
+.contact-item--wrp {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+ }
+.logo-brend--wrp {
+    grid-template-columns: repeat(4, 1fr);
+    @include desktop {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+    }
+    @include tablets574 {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+}
+.align-items {
+     @include desktop {
+        justify-content: space-around;
+    }
+}
+.logo-brend {
+    align-self: center;
+    @include tablets574 {
+       &:last-child {
+           margin-bottom: 40px;
+       }  
+    }
+ }
+.block-contact {
+    width: 100%;
+    height: 500px;
+    background-color: #191919;
+    @include laptop {
+        height: auto;
+    }
+ }
+.contact-item--wrp {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
+    @include laptop {
+        grid-template-columns: repeat(2, 2fr);
+    }
+      @include tablets574 {
+        grid-template-columns: 1fr;
+    }
+ }
+.contact-item {
+    height: auto;
+}
+.contact-item--logo {
+    @include tablets574 {
+        text-align: center;
+    }
+}
+.contact-item--logo-description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: "Montserrat";
+    color: rgb(85, 85, 85);
+    font-weight: 400;
+ }
+ .contact-item--description {
+    font-size: 14px;
+    font-family: "Montserrat";
+    color: rgb(85, 85, 85);
+    font-weight: 400;
+    height: 80px;
+    margin-bottom: 10px;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+ }
+.style-contact-item--link {
+     color: #fff;
+     &::after {
+         border-left: 6px solid #fff;
+     }
+ }
+.contact-item--title {
+    font-size: 24px;
+    font-family: "Raleway";
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+      @include tablets574 {
+    text-align: center;
+    }
+}
+.style-border  {
+    border-bottom: 1px solid lighten(#191919, 10%);
+    padding-bottom: 20px;
+}
+    
+.span-color-brown{
+    color: lighten(#191919, 15%); 
+}
+.span-color-white {
+    color: white;
+}
+.span-dspl-block {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.style-color-brown  {
+    color: $brown;
+}
+.span-pointer {
+    cursor: pointer;
+}
+.link-color-blue {
+    color: #0793b9;
+    text-decoration: none;
+}
+.link-color-gray {
+    color: #838383;
+    text-decoration: none;
+}
+.contact-item-widgets {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    @include tablets574 {
+         grid-template-columns: repeat(2, 1fr);
+        justify-content: space-around;
+         margin-bottom: 40px;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 80px;
+    background-color: #111111;
+    @include laptop875 {
+       height: 200px;
+   } 
+}
+.footer-wrp {
+   grid-template-columns: repeat(2, 1fr); 
+    @include laptop875 {
+      grid-template-columns: 1fr; 
+   } 
+}
+.footer-left--list,
+.footer-right--list {
+   display: flex;
+   align-self: center;
+}
+.footer-right--list, {
+   justify-content: flex-end;
+    @include laptop875 {
+      justify-content: center;
+      margin-top: -95px;
+   } 
+   
+     @include phones {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+   } 
+}
+.footer-left--list {
+    @include laptop875 {
+      justify-content: center;
+      margin-top: 15px;
+   } 
+       @include phones {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   } 
+}
+
+.footer-left--item,
+.footer-right--item {
+    margin-right: 20px;
+    font-size: 13px;
+    font-family: "Montserrat";
+    color: rgb(85, 85, 85);
+    font-weight: 400;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.footer-left--link-active {
+    color: $brown;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+.footer-link {
+    text-decoration: none;
+    color: rgb(177, 174, 174);
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+.footer-link-left {
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}

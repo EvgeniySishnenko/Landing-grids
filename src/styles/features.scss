@@ -1,0 +1,92 @@
+.section-features {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    background: url("../images/features.jpg");
+    @include big_desktop_max {
+    background: url("../images/features1200px.jpg");
+    background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+    }
+    @include phones {
+    background: url("../images/features480px.jpg");
+    background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+    }
+}
+.bckg-fon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(47, 59, 57, 0.7);
+}
+.controls-info-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.controls-block {
+    border-radius: 50%;
+    background-color: rgba(47, 59, 57, 0.8);
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    &:before {
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        border: 3px solid #fff;
+    }
+}
+
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px;
+    
+}
+.controls-play {
+        position: absolute; 
+        border: 12px solid transparent; 
+        border-left: 15px solid #ebebeb;
+        left: 58%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 50;
+}
+.info-block {
+   width: 100%; 
+   text-align: center;
+}
+.stile-shr {
+    margin-top: 10px;
+    width: 60%;
+    @include laptop {
+    width: 80%;
+    }
+    @include laptop875 {
+    width: 90%;
+    }
+}

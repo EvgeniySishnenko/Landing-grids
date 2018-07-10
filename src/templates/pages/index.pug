@@ -2,10 +2,18 @@ extends ../template
 
 block variables
     - var title = 'Добро пожаловать'
-
+block script
+    include ../common/script.js
 block content
-    section.section.section-welcome ПРивет 
-        
+    include ../section/home.pug
+    include ../section/about.pug
+    include ../section/portfolio.pug
+    include ../section/features.pug
+    include ../section/pricing.pug
+    include ../section/blog.pug
+    include ../section/contact.pug
+    
+            
                                 
 
 

@@ -1,0 +1,284 @@
+.tabs {
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+    position: relative;
+}
+.tab-menu--list {
+    display: flex;
+    justify-content: center;
+}
+.display-hide700 {
+    @include tablets700 {
+    opacity: 0;
+    display: none;
+    }
+}
+.tab-filter {
+    display: none;
+    @include tablets700 {
+    display: inline-block;
+    position: relative;
+    margin-left: 0;
+    }
+}
+.tab-filter-button {
+     @include tablets700 {
+    padding: 10px 20px 10px 20px;
+    border: 1px solid rgb(163, 161, 161);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "Montserrat";
+    color: rgb(140, 140, 140);
+    font-weight: 400;
+    cursor: pointer;
+    
+    }
+}
+.tab-filter-button--active {
+     @include tablets700 {
+    background-color: $brown;
+    color: #fff;
+    }
+}
+.tab-menu--item {
+    margin-right: 15px;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid rgb(163, 161, 161);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "Montserrat";
+    color: rgb(140, 140, 140);
+    font-weight: 400;
+    cursor: pointer;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.active-tab {
+    background-color: $brown;
+    color: #fff;
+   
+}
+.active-tab-mobile {
+    @include tablets700 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: auto;
+    position: absolute;
+    left: 75px;
+    top: 42px;
+    z-index: 10;
+    box-shadow: -1px 3px 38px 0px rgba(0,0,0,0.75);
+    background-color: white;
+    border-radius: 10px;
+    opacity: 1;
+    transition: all .5s;
+        .tab-menu--item {
+            margin-right: 0px;
+            padding: 0;
+            border: none;
+            border-radius: none;
+            font-size: 14px;
+            font-family: "Montserrat";
+            color: rgb(140, 140, 140);
+            font-weight: 400;
+            margin-top: 20px;
+            cursor: pointer;
+            &:last-child {
+                margin-bottom: 20px;
+            }
+        }
+        .active-tab {
+        background-color: inherit;
+        color: darken($brown, 10%);
+         font-weight: 700;
+    }
+    }
+    @include phones390 {
+        top: 50px;
+        left: 10px;
+    }
+}
+.content-tab {
+    margin-top: 40px;
+}
+.content-article {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    @include desktop {
+        grid-template-columns: repeat(3, 300px);
+        grid-gap: 20px;
+        justify-content: center;
+    }
+    @include laptop {
+        grid-template-columns: repeat(3, 250px);
+        grid-gap: 15px;
+        justify-items: center;
+        align-items: center;
+    }
+     @include laptop875 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+     @include tablets574 {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+    }
+}
+.style-center {
+    margin: auto;
+}
+.content-box {
+    height: 340px;
+    cursor: pointer;
+    position: relative;
+    @include desktop {
+        width: 300px;
+       
+    }
+    @include laptop {
+        width: 250px;
+       
+    }
+     @include laptop875 {
+       width: 100%;
+       height: 340px;
+    }
+    @include tablets574 {
+         width: 350px;
+    }
+     @include phones390 {
+         width: 300px;
+    }
+    &:hover {
+        .content-hover {
+            background-color: rgba(17, 17, 18, 0.7);
+            z-index: 1;
+        }
+        .text-box {
+             background-color: #362f2d;
+             &::before {
+                 transform: scale(0);
+                 transition:  0.3s;
+             }
+        }
+        .text-box--title {
+            color: #a19e9d;
+        }
+        .text-box--text {
+            color: $brown; 
+        }
+    }
+}
+
+.text-box {
+    width: 100%;
+    height: 100px;
+    background-color: #fbfaf8;
+    position: relative;
+    text-align: left;
+    transition:  0.3s;
+    &::before {
+        content: "";
+        position: absolute; 
+        border: 10px solid transparent; 
+        border-bottom: 10px solid #fbfaf8;
+        left: 20px;
+        transform: translateY(-20px) scale(1);
+        transition:  0.3s;
+        z-index: 50;
+        
+    }
+   
+}
+.content-pic {
+    width: 100%;
+    height: 240px;
+    margin: 0;
+    position: relative;
+    @include desktop {
+        width: 300px;
+    }
+     @include laptop {
+        width: 250px;
+       height: 200px;
+    }
+     @include laptop875 {
+        width: 100%;
+        height: 240px;
+    }
+ }
+ .content-img {
+      @include desktop {
+        height: 240px;
+        width: 300px;
+       
+    }
+     @include laptop {
+        width: 250px;
+        height: 200px;
+    }
+    @include laptop875 {
+        width: 100%;
+        height: 240px;
+    }
+ }
+ .content-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(17, 17, 18, 0);
+    z-index: -1;
+    transition:  0.3s;
+}
+.content-box--link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.content-hover--link2 {
+    margin-left: 10px;
+}
+.link-svg {
+    fill: red;
+}
+.text-box--title {
+    padding-top: 25px;
+    font-size: 20px;
+    font-family: "Raleway";
+    color: rgb(199, 178, 153);
+    font-weight: 500;
+    transition:  0.3s;
+ }
+ .text-box--text  {
+    font-size: 14px;
+    font-family: "Montserrat";
+    color: rgb(209, 209, 209);
+    font-weight: 400;
+    transition:  0.3s;
+ }
+.text-box--title,
+.text-box--text {
+    margin-left: 30px;
+}
+.section-button {
+    width: 100%;
+    height: 150px;
+    margin-top: 50px;
+}
+#Capa_1,
+#Layer_1 {
+    fill: #fff;
+
+    &:hover {
+        fill:  $brown;
+    }
+}

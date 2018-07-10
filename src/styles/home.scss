@@ -1,0 +1,458 @@
+.section-home {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.header {
+    position: absolute;
+    top: 2%;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 10;
+   
+    @include iphone {
+    min-width: 280px;
+	}
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; 
+}
+.logo {
+    width: 20%;
+    height: 100%;
+}
+.link-logo {
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+
+}
+.logo-img2 {
+    position: relative;
+    align-self: center;
+}
+.nav {
+    @include desktop1024 {
+     display: flex;	
+     justify-content: flex-end;
+} 
+}
+.nav-menu {
+    width: 67%;
+    text-align: right;
+    @include tablets {
+        margin-right: 30px;
+    } 
+}
+
+
+.nav-item {
+    display: inline-block;
+    margin-right: 30px;
+    @include desktop {
+	 margin-right: 20px;	
+}
+}
+.nav-link {
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Montserrat";
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: color .4s ease;
+    &:hover {
+        color: $brown;
+    }
+}
+.display-hide {
+    // этот класс удаляется при клике
+    @include desktop1024 {
+       opacity: 0;
+} 
+ }
+.active-nav-list {
+    // ЭТОТ КЛАСС ДОБАВЛЯЕТСЯ ПРИ КЛИКЕ 
+    @include desktop1024 {
+     position: absolute;
+     top: 100%;
+     left: 50%;
+     transform: translateX(-50%);  
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     opacity: 1;
+     width: 350px;
+     height: 300px;
+     border-radius: 10px;
+     background-color: rgba(116, 100, 76, 0.8);
+     z-index: 99990;
+     box-shadow: 3px 9px 61px 0px rgba(0,0,0,0.75);
+     transition: all 0.8s;
+     .nav-item {
+         margin-top: 10px;
+         &:first-child {
+             margin-top: 0;
+         }
+     }
+     .nav-link  {
+         font-size: 16px;
+     }
+} 
+}
+.adaptive-humb-active {
+    & .adaptive-humb-line1 {
+        transform: rotate(-45deg) translateY(8px) translateX(-1px);
+          transition: all 0.8s;
+    }
+    & .adaptive-humb-line2 {
+        transform: rotateY(-90deg);
+         transition: all 0.8s;
+    }
+    & .adaptive-humb-line3 {
+        transform: rotate(45deg) translateY(-11px) translateX(-3px);
+          transition: all 0.8s;
+}
+}
+.adaptive-humb {
+    width: 30px;
+    height: 100%;
+    display: none;
+   
+    @include desktop1024 {
+        display: block;
+        cursor: pointer;
+    }
+}
+.adaptive-humb-line1,
+.adaptive-humb-line2,
+.adaptive-humb-line3{
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin-top: 4px;
+    border-radius: 8px;
+      transition: all 0.8s;
+    &:first-child {
+        margin-top: 0;
+    }
+}
+.search-cart {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    @include desktop1024 {
+     width: 20%;
+    justify-content: space-around;
+    }
+   @include tablets {
+    width: 30%;
+    }
+    @include phones {
+    width: 40%;
+    }
+    @include phones390 {
+    justify-content: flex-end;
+    width: 20%;
+	}
+   
+}
+.cart,
+.search {
+    @include phones390 {
+	display: none;
+	}
+}
+
+.svg-search {
+    fill: red;
+    cursor: pointer;
+}
+.cart-svg,
+.search-svg{
+    fill: white;
+    cursor: pointer;
+     transition: fill .4s ease;
+    &:hover {
+        fill: $brown;
+    }
+}
+.search {
+    margin-left: 25px;
+     @include desktop1024 {
+      margin-left: 0px;
+}
+}
+.block-slider,
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.slider-container {
+    .bx-wrapper {
+        border: none;
+        box-shadow: none;
+        .bx-next {
+           background: url("../images/right.png") no-repeat;
+            width: 40px;
+            height: 73px;
+            @include tablets {
+            display: none;
+    }
+}
+        .bx-prev {
+            background: url("../images/left.png") no-repeat;
+            width: 40px;
+            height: 73px;
+        @include tablets {
+                display: none;
+        }
+            }
+        .bx-pager {
+            z-index: 2;
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+        }
+       .bx-pager.bx-default-pager a {
+            background: $brown;
+            text-indent: -9999px;
+            display: block;
+            margin: 0 5px;
+            outline: 0;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            background: #939395;
+            cursor: pointer;
+            border: 2px solid #939395;
+            &:hover {
+                background: none;
+                border: 2px solid #939395;
+                width: 15px;
+                height: 15px;
+            }
+            &.active {
+                background: none;
+                border: 2px solid #939395;
+                width: 17px;
+                height: 17px;
+            }
+           
+    }
+
+
+.slider-img,
+.slider-img2 {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    min-height: 590px;
+     @include desktop {
+        display: none; 
+	}
+}
+    
+.slider-img--1200,
+.slider-img2--1200 {
+    display: none;
+    @include desktop {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        min-height: 590px; 
+    }
+     @include laptop {
+        display: none;
+	}
+}
+.slider-img--992 {
+    display: none;
+    @include laptop {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        min-height: 590px; 
+    }
+    @include tablets574 {
+         display: none;
+    }
+}
+.slider-img--574,
+.slider-img2--574 {
+    display: none;
+    @include tablets574 {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        min-height: 590px; 
+	}
+}
+.slider-img2--992 {
+     display: none;
+    @include laptop {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        min-height: 590px; 
+    }
+     @include tablets700 {
+       display: none;
+	}
+}
+.slider-img2--700 {
+    display: none;
+    @include tablets700 {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        min-height: 590px; 
+	}
+     @include tablets574 {
+         display: none;
+     }
+} 
+
+}  
+}
+
+.slider-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+.slider-fon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient( 0deg, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+    opacity: 0.6;
+
+}
+.slider-fon2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient( 0deg, rgba(77, 75, 73, 0.733) 0%, rgba(14, 42, 163, 0.473) 100%);
+    opacity: 0.6;
+
+}
+.slider-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     @include tablets {
+         width: 558px;
+    }
+    @include tablets574 {
+         width: 500px;
+    }
+    @include phones518 {
+         width: 465px;
+    }
+     @include phones {
+         width: 300px;
+    }
+    @include iphone {
+        min-width: 280px;
+    }
+}
+.h3title {
+    font-size: 36px;
+    font-family: "Raleway";
+    color: rgb(255, 255, 255);
+    line-height: 1.3;
+    margin: 0;
+    @include laptop {
+      font-size: 30px;
+    }
+    @include tablets {
+        font-size: 20px;
+    }
+    @include phones {
+        font-size: 20px;
+    }
+}
+.h2title {
+    font-size: 52px;
+    font-family: "Raleway";
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+    @include laptop {
+      font-size: 40px;
+    }
+    @include tablets {
+        font-size: 30px;
+    }
+    @include phones {
+        font-size: 18px;
+    }
+}
+.shr-text {
+    font-size: 16px;
+    font-family: "Raleway";
+    color: rgb(255, 255, 255);
+    text-align: center;
+    @include tablets {
+        font-size: 14px;
+    }
+      
+     @include phones {
+        font-size: 13px;
+    }
+}
+.link-btn {
+    width: 175px;
+    height: 50px;
+    display: block;
+    background-color: $brown;
+    text-align: center;
+    padding-top: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Raleway";
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    border-radius: 5px;
+      &:active {
+       border: 2px solid #a58971; 
+    }
+}
+.button-case {
+    width: 177px;
+    height: 53px;
+    margin-top: 60px;
+    border-bottom: 8px solid #887361;
+    border-right: 8px solid #887361;
+    border-radius: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 5px;
+    &:active {
+       border-bottom: none; 
+       border-right: none;
+    }
+
+}
+
+

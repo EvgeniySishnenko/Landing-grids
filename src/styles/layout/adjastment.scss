@@ -7,222 +7,57 @@
 .maincontent {
     height: 100%;
     position: relative;
-}
-.section {
-    width: 100%;
-    height: 100%;
+    will-change: transform;
+    transition: 1s;
 }
 .container {
     padding: 0 10px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    @include big_desktop {
-    max-width: rem(1800px);
+    max-width: 1200px;
     width: 100%;
-    }
-    @include desktop {
-    max-width: rem(1200px);
-    width: 100%;
-    }
     @include laptop {
-    max-width: rem(992px);
+    max-width: 992px;
     width: 100%;
     }
     @include tablets {
-    max-width: rem(768px);
+    max-width: 768px;
     width: 100%;
     }
     @include phones {
-    max-width: rem(480px);
+    max-width: 480px;
     width: 100%;
     }
 }   
-.header {
-    width: 100%;
-    height: rem(80px);
+.grid {
+    display: grid;
 }
-.gif-container {
+.skroll-bar {
     position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0; 
-    transition: 1s all;
-    visibility: visible;
-    opacity: 1;
-    z-index: 26;
-    background-color: #193567;
-    // background: url("../images/night_prel_bg.jpg");
-    // background-position: center;
-    // background-size: cover;
-    // background-repeat: no-repeat;
-
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    display: none;
 }
-
-.gif-preloader {
-    position: absolute;
-    // top: 38%;
-    // left: 45%;
-    left: 45%;
-    top: 40%;
-    transform: translate(-45%, -40%);
-
-     @include tablets {
-    left: 35%;
-    top: 40%;
-    transform: translate(-35%, -40%);
-  }
-   @include phones {
-    left: 34%;
-    top: 40%;
-    transform: translate(-34%, -40%);
-  }
-
-  @include iphone {
-    left: 25%;
-    top: 40%;
-    transform: translate(-25%, -40%);
-	}
-
-     
-    width: 150px;
-    height: 150px;
-    border: 3px solid transparent;
+.skroll-bar-dot {
+    background-color: #0793b9;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    animation: inimPreloader 1s infinite linear;
-    border-top-color: white;
-
-    &:after {
-    content: "";
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    right: 10%;
-    bottom: 10%;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    border-top-color: red;
-     animation: inimPreloader 2s infinite linear;
-    }
-    &:before {
-    content: "";
-    position: absolute;
-    top: 23%;
-    left: 23%;
-    right: 23%;
-    bottom: 23%;
-    border-radius: 50%;
-    border: 4px solid transparent;
-    border-top-color: blue;
-     animation: inimPreloader 3s infinite linear;
+    margin-top: 20px;
+    cursor: pointer;
+    z-index: -1;
+    &:hover {
+        background-color: rgba($color: #000000, $alpha: 0);
+        border: 2px solid #0793b9;
     }
 }
-@keyframes inimPreloader {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-     transform: rotate(360deg);
-    }
+.active-skroll-bar {
+    display: block;
 }
-.done {
-    visibility: hidden;
-    opacity: 0;
-    // z-index: -1;
-}
-// обработка полей на странице майворк
-.error-container-name,
-.error-container-mail {
-    position: absolute;
-    bottom: -60%;
-    height: rem(30px);
-    min-width: rem(250px);
-    width: auto;
-    background-color: rgb(216, 47, 47);
-    border-radius: 7px;
-    color: #fff;
-    font-size: rem(14px);
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-    font-size: 400;
-    padding-top: 4px;
-    text-align: center;
-    &::before {
-    content: "";
-    border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-    border-bottom: 10px solid rgb(216, 47, 47);
-    position: absolute;
-    top: -30%;
-    left: 10%;
-    }
-}
-.error-container-text {
-    position: absolute;
-    bottom: 15%;
-    height: rem(30px);
-    min-width: rem(250px);
-    width: auto;
-    background-color: rgb(216, 47, 47);
-    border-radius: 7px;
-    color: #fff;
-    font-size: rem(14px);
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-    font-size: 400;
-    padding-top: 4px;
-    text-align: center;
-
-    &::before {
-    content: "";
-    border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-    border-bottom: 10px solid rgb(216, 47, 47);
-    position: absolute;
-    top: -30%;
-    left: 10%;
-    }
-}
-// обработка полей на странице индекс
-.error-container-radio {
-    position: absolute;
-    bottom: -40%;
-    height: rem(35px);
-    min-width: rem(200px);
-    width: auto;
-    background-color: rgb(216, 47, 47);
-    border-radius: 7px;
-    color: #fff;
-    font-size: rem(15px);
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-    font-size: 400;
-    padding-top: 6px;
-    text-align: center;
-}
-.error-container-pass,
-.error-container-login {
-    position: absolute;
-    bottom: 0%;
-    height: rem(30px);
-    min-width: rem(250px);
-    width: auto;
-    background-color: rgb(216, 47, 47);
-    border-radius: 7px;
-    color: #fff;
-    font-size: rem(14px);
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-    font-size: 400;
-    padding-top: 4px;
-    text-align: center;
-
-    &::before {
-    content: "";
-    border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-    border-bottom: 10px solid rgb(216, 47, 47);
-    position: absolute;
-    top: -30%;
-    left: 10%;
+.active-skroll-bar-dot {
+    background-color: #b9077e;
+    &:hover {
+        background-color: rgba($color: #000000, $alpha: 0);
+        border: 2px solid #b9077e;
     }
 }
